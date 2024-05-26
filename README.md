@@ -19,7 +19,7 @@ The App.config file contains the setting used for connecting to the Reddit API t
 Special Notes
 =============
 
-OOAuth2 Authorization
+OAuth2 Authorization
 ---------------------
 -	The OAuth2 code (AuthorizeRedditUser) is not original code. It was only slightly modified by me to use the AppsSttings.
 -	The Redirect URI for your Reddit app must be as specified in the OAuthRedirect setting. The package has a known issue that it only works with this specific URI and that the URI passed into the package must match the URI of the Reddit app. This is a minor nuisance.
