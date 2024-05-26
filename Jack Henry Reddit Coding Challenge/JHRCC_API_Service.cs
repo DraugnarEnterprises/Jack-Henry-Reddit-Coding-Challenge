@@ -49,7 +49,7 @@ namespace Jack_Henry_Reddit_Coding_Challenge
 
             // Begin: Get Contributor/Author with the most posts
             //    Notes: Non-moderators cannot get a list of Contributors so have to load every post in the subreddit and use Lambda to group and get a count for each Contributor/Author
-            //           Requests through the API are limited to 100 results each
+            //           Requests through the API are limited to 100 results each so the posts are pulled into a lists via a while loop.
             List<Post> postsForAuthor = _subreddit.Posts.GetTop(limit: 100);
             List<Post> nextSet = new List<Post>(postsForAuthor);
             requestCount++;

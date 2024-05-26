@@ -24,12 +24,12 @@ namespace Jack_Henry_Reddit_Coding_Challenge
             }
             catch (Exception ex)
             {
-                //Ignoring exception per noted from nuget package developer.
+                //Ignoring exception per noted from nuget package developer. --Robert
                 Console.Clear();
             }
 
             // Open the browser to the Reddit authentication page.  Once the user clicks "accept", Reddit will redirect the browser to localhost:8080, where AwaitCallback will take over.  --Kris
-            OpenBrowser(authTokenRetrieverLib.AuthURL());
+            OpenBrowser(authTokenRetrieverLib.AuthURL(), ConfigurationManager.AppSettings["BrowserExePath"]);
 
             while(string.IsNullOrEmpty(authTokenRetrieverLib.RefreshToken)) { }
 
@@ -41,7 +41,7 @@ namespace Jack_Henry_Reddit_Coding_Challenge
             return authTokenRetrieverLib.RefreshToken;
         }
 
-        public static void OpenBrowser(string authUrl, string browserPath = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
+        public static void OpenBrowser(string authUrl, string browserExePath)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace Jack_Henry_Reddit_Coding_Challenge
             catch (System.ComponentModel.Win32Exception)
             {
                 // This typically occurs if the runtime doesn't know where your browser is.  Use BrowserPath for when this happens.  --Kris
-                ProcessStartInfo processStartInfo = new ProcessStartInfo(browserPath)
+                ProcessStartInfo processStartInfo = new ProcessStartInfo(browserExePath)
                 {
                     Arguments = authUrl
                 };

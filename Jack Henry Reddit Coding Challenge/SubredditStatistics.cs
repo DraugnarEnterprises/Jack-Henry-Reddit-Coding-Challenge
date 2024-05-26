@@ -8,12 +8,12 @@ namespace Jack_Henry_Reddit_Coding_Challenge
 {
     internal struct SubredditStatistics
     {
-        public string subredditName;
-        public string subredditAuthor;
-        public int? subredditAuthorPostCount;
-        public string postTitle;
-        public string postAuthor;
-        public int? upVotes;
-        public DateTime? datePolled;
+        internal string subredditName;
+        internal string subredditAuthor;
+        internal int? subredditAuthorPostCount;
+        internal string postTitle;
+        internal string postAuthor;
+        internal int? upVotes;
+        internal DateTime? datePolled;
     } 
 }
