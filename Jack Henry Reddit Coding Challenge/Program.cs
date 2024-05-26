@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Jack_Henry_Reddit_Coding_Challenge;
+using Reddit_Polling_Service;
 
 Console.WriteLine("Instantiating JHRCC_API_Service");
-JHRCC_API_Service apiQuery = new JHRCC_API_Service();
+PollRedditAPIService apiQuery = new PollRedditAPIService();
 Console.WriteLine("JHRCC_API_Service ready");
 
 DateTime? lastPolled = null;

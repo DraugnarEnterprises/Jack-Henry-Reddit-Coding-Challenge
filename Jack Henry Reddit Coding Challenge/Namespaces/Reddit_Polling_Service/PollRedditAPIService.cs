@@ -10,21 +10,22 @@ using Reddit;
 using Reddit.Controllers;
 using Reddit.Controllers.Structures;
 using RestSharp;
+using Reddit_User_Authorization;
 
-namespace Jack_Henry_Reddit_Coding_Challenge
+namespace Reddit_Polling_Service
 {
-    internal class JHRCC_API_Service
+    public class PollRedditAPIService
     {
         private Subreddit _subreddit;
         private RedditClient _redditClient;
 
         private SubredditStatistics _subredditStatistics;
-        internal SubredditStatistics subredditStatistics
+        public SubredditStatistics subredditStatistics
         {
             get { return _subredditStatistics; }
         }
 
-        internal JHRCC_API_Service()
+        public PollRedditAPIService()
         {
             Console.WriteLine("Initializing JHRCC_Reddit_Connection");
             if (_redditClient == null)
@@ -83,6 +84,8 @@ namespace Jack_Henry_Reddit_Coding_Challenge
         {
             // There is a limit of 60 requests per minute
             // We will add until 60 is reached then pause if a minute hasn't passed
+
+            if (requestCount > 1 || requestCount == 0) requestCount++;
 
             while (lastTimeStamp.AddSeconds(requestCount) > DateTime.Now)
             {

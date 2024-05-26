@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jack_Henry_Reddit_Coding_Challenge
+namespace Reddit_User_Authorization
 {
-    internal static class AuthorizeRedditUser
+    public static class AuthorizeRedditUser
     {
         public static string AuthorizeUser(string appId, string appSecret, int port = 8080)
         {
