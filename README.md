@@ -44,3 +44,10 @@ Statistics
 Request Limits from Reddit
 --------------------------
 Reddit limits the request count to 60 per minute. The code checks, at most, once every three requests and makes certain at least as many seconds have passed as the requests that have occured. If more than 1 request occured, the code adds an extra second to the check to be certain the 60 per minute limit cannot be exceeded. This maximizes the number of checks without exceeding Reddits limits. On my internet, this wouldn't be a problem anyhow, but it would work if this code were used in Cloud based solution to prevent Azure or some other cloud service from making too many requests.
+
+
+Final Thoughts
+==============
+Depending on your internet speed, the inital startup may take some time. If you see your username and cake date, it is working so please be patient.
+
+I look forward to discussing my design and my thoughts behind it further with you or someone else from Jack Henry in the future.
